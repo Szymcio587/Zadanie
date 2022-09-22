@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Town</td>
+        <td>Keywords</td>
+        <td>Radius</td>
+        <td>Funds</td>
+        <td>Bid</td>
+        <td>Status</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item: ${items}" th:class="${item.id%2 == 1? 'odd-row':''}">
+        <td th:text="${item.id}">1</td>
+        <td th:text="${item.name}">Example Campaign</td>
+        <td th:text="${item.town}">New York</td>
+        <td th:text="${item.keywords}">keywords</td>
+        <td th:text="${item.radius + 'km'}">100</td>
+        <td th:text="${item.campaignFund + '$'}">1 000 000</td>
+        <td th:text="${item.bidAmount + '$'}">10 000</td>
+        <td th:text="${item.status}">on</td>
+    </tr>
+    </tbody>
+    <a href="/index">Return to homepage</a>
+</table>
+</body>
+</html>

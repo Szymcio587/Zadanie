@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href="/styles.css" rel="stylesheet" type="text/css">
+  <script src="/scripts.js"></script>
+</head>
+<body>
+
+<form action="add_campaign" method="post">
+  <div>
+    <label for="name">Campaign name: </label>
+    <input type="text" id="name" name="name" required>
+  </div>
+  <div>
+      <label>Please select keywords: </label>
+      Health <input type="checkbox" name="keywords" value="Health">
+      Sport <input type="checkbox" name="keywords" value="Sport" >
+      Science<input type="checkbox" name="keywords" value="Science">
+      Business<input type="checkbox" name="keywords" value="Business">
+      Technology<input type="checkbox" name="keywords" value="Technology">
+      Fashion<input type="checkbox" name="keywords" value="Fashion">
+      Other<input type="checkbox" name="keywords" value="Other">
+  </div>
+  <div>
+    <label for="bid"> Bid amount: </label>
+    <input type="number" id="bid" name="bid" required>
+  </div>
+  <div>
+    <label for="funds"> Campaign found: </label>
+    <input type="number" id="funds" name="funds" required>
+  </div>
+  <div>
+    Status(on/off):  <input type="checkbox" id="status" name="status">
+  </div>
+  <div>
+    <label for="town"> Towns: </label>
+    <input list="town" placeholder="Search" name="town" required>
+    <datalist id="town">
+      <option>London</option>
+      <option>Berlin</option>
+      <option>Warsaw</option>
+      <option>Moscow</option>
+      <option>Barcelona</option>
+      <option>Madrid</option>
+      <option>Frankfurt</option>
+      <option>Rome</option>
+      <option>Amsterdam</option>
+      <option>Athens</option>
+      <option>Oslo</option>
+      <option>Zagreb</option>
+    </datalist>
+  </div>
+  <div>
+    <label for="radius"> Radius: </label>
+    <input type="range" min="5" max="100" value="50" id="radius" name="radius" oninput="this.nextElementSibling.value = this.value" required>
+    <output>50</output>
+  </div>
+  <div>
+    <input type="submit" value="Add">
+  </div>
+</form>
+</body>
+</html>
