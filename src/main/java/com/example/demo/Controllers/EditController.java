@@ -25,7 +25,7 @@ public class EditController {
     String Edit(@RequestParam Long id, @RequestParam String name, @RequestParam int bid, @RequestParam int radius,
                 @RequestParam int funds, @RequestParam String town, boolean status, String keywords) {
         CampaignDto dto = new CampaignDto(name, town, bid, radius, funds, status, keywords);
-        if(service.EditCampaign(dto))
+        if(service.EditCampaign(dto, id))
             return "success";
         else
             return "edit";

@@ -16,11 +16,6 @@ public class CampaignService {
         this.mapper = mapper;
     }
 
-    Optional<CampaignDto> GetOfferById(Long id) {
-        return repository.findById(id)
-                .map(mapper::Map);
-    }
-
     public void AddCampaign(CampaignDto dto) {
         repository.save(mapper.MapReverse(dto));
     }
@@ -41,9 +36,9 @@ public class CampaignService {
         return false;
     }
 
-    public boolean EditCampaign(CampaignDto dto) {
-        if(repository.findById(dto.getId()).isPresent()) {
-            repository.deleteById(dto.getId());
+    public boolean EditCampaign(CampaignDto dto, Long id) {
+        if(repository.findById(id).isPresent()) {
+            repository.deleteById(id);
             repository.save(mapper.MapReverse(dto));
             return true;
         }

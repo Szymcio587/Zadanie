@@ -8,33 +8,37 @@
 </head>
 <body>
 
-<form action="add_campaign" method="post">
-  <div>
+<form action="add_campaign" method="post" class="campaign">
+  <div class="underline first">
     <label for="name">Campaign name: </label>
     <input type="text" id="name" name="name" required>
   </div>
-  <div>
+  <div class="underline choice_list">
       <label>Please select keywords: </label>
-      Health <input type="checkbox" name="keywords" value="Health">
-      Sport <input type="checkbox" name="keywords" value="Sport" >
-      Science<input type="checkbox" name="keywords" value="Science">
-      Business<input type="checkbox" name="keywords" value="Business">
-      Technology<input type="checkbox" name="keywords" value="Technology">
-      Fashion<input type="checkbox" name="keywords" value="Fashion">
-      Other<input type="checkbox" name="keywords" value="Other">
+      <p> Health <input type="checkbox" name="keywords" value="Health"> </p>
+      <p> Sport <input type="checkbox" name="keywords" value="Sport" > </p>
+      <p> Science<input type="checkbox" name="keywords" value="Science"> </p>
+      <p> Business<input type="checkbox" name="keywords" value="Business"> </p>
+      <p> Technology<input type="checkbox" name="keywords" value="Technology"> </p>
+      <p> Fashion<input type="checkbox" name="keywords" value="Fashion"> </p>
+      <p> Other<input type="checkbox" name="keywords" value="Other"> </p>
   </div>
-  <div>
+  <div class="underline">
     <label for="bid"> Bid amount: </label>
-    <input type="number" id="bid" name="bid" required>
+    <input type="number" id="bid" name="bid" min="100" required>
   </div>
-  <div>
+  <div class="underline">
     <label for="funds"> Campaign found: </label>
     <input type="number" id="funds" name="funds" required>
   </div>
-  <div>
-    Status(on/off):  <input type="checkbox" id="status" name="status">
+  <div class="underline">
+    Status(off/on):
+    <label class="switch">
+    <input type="checkbox">
+    <span class="slider"></span>
+    </label>
   </div>
-  <div>
+  <div class="underline">
     <label for="town"> Towns: </label>
     <input list="town" placeholder="Search" name="town" required>
     <datalist id="town">
@@ -52,12 +56,12 @@
       <option>Zagreb</option>
     </datalist>
   </div>
-  <div>
+  <div class="underline">
     <label for="radius"> Radius: </label>
-    <input type="range" min="5" max="100" value="50" id="radius" name="radius" oninput="this.nextElementSibling.value = this.value" required>
+    <input type="range" min="10" max="99" value="50" id="radius" name="radius" oninput="this.nextElementSibling.value = this.value" required>
     <output>50</output>
   </div>
-  <div>
+  <div class="underline">
     <input type="submit" value="Add">
   </div>
 </form>
